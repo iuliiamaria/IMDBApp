@@ -1,0 +1,102 @@
+[
+    {
+        "movie": {
+            "Title": "The Land Girls",
+            "Release": "2019",
+            "Genre": "Comedy, Drama",
+            "Time": "2h 41min",
+            "Director": "Quentin Tarantino",
+            "Stars": "Leonardo DiCaprio, Brad Pitt, Margot Robbie"
+        }
+    },
+    {
+        "movie": {
+            "Title": "Scary Stories to Tell in The Dark",
+            "Release": "2019",
+            "Genre": "Horror, Mystery, Thriller",
+            "Time": "1h 48min",
+            "Director": "Andre Ovredal",
+            "Stars": "Zoe Margaret Colletti, Michael Garza, Gabriel Rush"
+        }
+    },
+    {
+        "movie": {
+            "Title": "Fast & Furious",
+            "Release": "2019",
+            "Genre": "Action,Adventure",
+            "Time": "2h 17min",
+            "Director": "David Leitch",
+            "Stars": "Dwayne Johnson, Jason Statham, Idris Elba"
+        }
+    },
+    {
+        "movie": {
+            "Title": "Little Women",
+            "Release": "2019",
+            "Genre": "Drama, Romance",
+            "Time": "2h 5min",
+            "Director": "Greta Gerwing",
+            "Stars": "Florence Pugh, Timothée Chalamet, Saoirse Ronan"
+        }
+    },
+    {
+        "movie": {
+            "Title": "Avengers: Endgame",
+            "Release": "2019",
+            "Genre": "Action, Adventure, Sci-Fi",
+            "Time": "3h 1min",
+            "Director": "Anthony Russo, Joe Russo",
+            "Stars": "Robert Downey Jr., Chris Evans, Mark Ruffalo"
+        }
+    },
+    {
+        "movie": {
+            "Title": "The Lion King",
+            "Release": "2019",
+            "Genre": "Animation, Adventure, Drama",
+            "Time": "1h 58min",
+            "Director": "Jon Favreau",
+            "Stars": "Donald Glover, Beyoncé, Seth Rogen"
+        }
+    },
+    {
+        "movie": {
+            "Title": "Last Christmas",
+            "Release": "2019",
+            "Genre": "Comedy, Romance",
+            "Time": "3h 0min",
+            "Director": "Paul Feig",
+            "Stars": "Emilia Clarke, Henry Golding, Emma Thompson"
+        }
+    },
+    {
+        "movie": {
+            "Title": "Gisaengchung ",
+            "Release": "2019",
+            "Genre": "Comedy, Drama, Thriller",
+            "Time": "2h 17min",
+            "Director": "Joon-ho Bong",
+            "Stars": "Kang-ho Song, Sun-kyun Lee, Yeo-jeong Jo"
+        }
+    },
+    {
+        "movie": {
+            "Title": "Good Boys",
+            "Release": "2019",
+            "Genre": "Adventure, Comedy",
+            "Time": "1h 29min",
+            "Director": "Hene Stupnitsky",
+            "Stars": "Jacob Tremblay, Keith L. Williams, Brady Noon"
+        }
+    },
+    {
+        "movie": {
+            "Title": "Aladdin",
+            "Release": "2019",
+            "Genre": "Adventure, Comedy, Family",
+            "Time": "2h 8min",
+            "Director": "Guy Ritchie",
+            "Stars": "Will Smith, Mena Massoud, Naomi Scott"
+        }
+    }
+]
