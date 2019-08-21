@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Sign in</title>
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" th:href="@{/css/login.css}"
+	href="../../static/css/login.css" />
+</head>
+<body>
+	<div class="container">
+		<div class="alert alert-danger" role="alert" th:if="${param.error}">The
+			email or password is incorrect!</div>
+		<form th:action="@{/login}" th:object="${appuser}" method="post">
+			<div class="imgcontainer">
+				<img src="../../static/images/logo.png" alt="Avatar" class="avatar">
+			</div>
+
+			<div class="container">
+				<label for="inputEmail"><b>Email</b></label> <input type="email"
+					placeholder="Enter Email" name="email" required> <label
+					for="inputPassword"><b>Password</b></label> <input type="password"
+					placeholder="Enter Password" name="password" required>
+
+				<button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+				<label> <input type="checkbox" checked="checked"
+					name="remember"> Remember me
+				</label>
+			</div>
+
+			<div class="container" style="background-color: #f1f1f1">
+				<button type="button" class="cancelbtn">Cancel</button>
+				<span class="new"><a th:href="@{/signup}">Create an
+						account.</a></span>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
