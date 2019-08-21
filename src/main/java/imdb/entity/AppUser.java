@@ -22,11 +22,17 @@ public class AppUser {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-	@Column(name = "username", length = 30, nullable = false, unique = true)
-	private String name;
+	@Column(name = "firstname", length = 30, nullable = false, unique = true)
+	private String firstName;
+	
+	@Column(name = "lastname", length = 30, nullable = false, unique = true)
+	private String lastName;
+	
+	@Column(name = "email", length = 30, nullable = false, unique = true)
+	private String email;
 
 	@Column(name = "password", length = 50, nullable = false, unique = false)
-	private String pass;
+	private String password;
 
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "user_role", joinColumns = { @JoinColumn(name = "user_id") }, inverseJoinColumns = {
@@ -45,20 +51,36 @@ public class AppUser {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
-	public String getPass() {
-		return pass;
+	public String getLastName() {
+		return lastName;
 	}
 
-	public void setPass(String pass) {
-		this.pass = pass;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public List<Role> getRoles() {
@@ -71,6 +93,8 @@ public class AppUser {
 
 	@Override
 	public String toString() {
-		return "AppUser [id=" + id + ", name=" + name + ", pass=" + pass + "]";
+		return "AppUser [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
+				+ ", password=" + password + ", roles=" + roles + "]";
 	}
+
 }
