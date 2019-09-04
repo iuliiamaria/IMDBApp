@@ -24,19 +24,22 @@ public class AppUser {
 
 	@Column(name = "firstname", length = 30, nullable = false, unique = true)
 	private String firstName;
-	
+
 	@Column(name = "lastname", length = 30, nullable = false, unique = true)
 	private String lastName;
-	
+
 	@Column(name = "email", length = 30, nullable = false, unique = true)
 	private String email;
 
-	@Column(name = "password", length = 50, nullable = false, unique = false)
+	@Column(name = "password", length = 500, nullable = false, unique = false)
 	private String password;
 
+	@Column(name = "active", nullable = false)
+	private int active;
+
 	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "user_role", joinColumns = { @JoinColumn(name = "user_id") }, inverseJoinColumns = {
-			@JoinColumn(name = "role_id") })
+	@JoinTable(name = "user_role", joinColumns = { @JoinColumn(name = "id_user") }, inverseJoinColumns = {
+			@JoinColumn(name = "id_role") })
 	private Set<Role> roles;
 
 	public AppUser() {
@@ -81,6 +84,14 @@ public class AppUser {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public int getActive() {
+		return active;
+	}
+
+	public void setActive(int active) {
+		this.active = active;
 	}
 
 	public Set<Role> getRoles() {
