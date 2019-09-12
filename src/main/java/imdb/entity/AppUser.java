@@ -101,7 +101,7 @@ public class AppUser {
 	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
 	}
-
+	
 	@Override
 	public String toString() {
 		return "AppUser [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email

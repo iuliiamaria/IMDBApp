@@ -3,6 +3,8 @@ package imdb.controller;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +16,7 @@ import imdb.service.AppUserService;
 
 @Controller
 public class AppUserController {
-	
+
 	@Autowired
 	private AppUserService appUserService;
 
@@ -30,7 +32,7 @@ public class AppUserController {
 	public ModelAndView signup() {
 		ModelAndView model = new ModelAndView();
 		AppUser appUser = new AppUser();
-		model.addObject("appuser", appUser);
+		model.addObject("appUser", appUser);
 		model.setViewName("user/signup");
 
 		return model;
@@ -42,7 +44,7 @@ public class AppUserController {
 		AppUser appUserExists = appUserService.findByEmail(appUser.getEmail());
 
 		if (appUserExists != null) {
-			bindingResult.rejectValue("email", "error.user", "This email already exists!");
+			bindingResult.rejectValue("email", "error.appuser", "This email already exists!");
 		}
 
 		if (bindingResult.hasErrors()) {
@@ -50,7 +52,7 @@ public class AppUserController {
 		} else {
 			appUserService.saveUser(appUser);
 			model.addObject("msg", "User has been registered succesfully!");
-			model.addObject("appuser", new AppUser());
+			model.addObject("appUser", new AppUser());
 			model.setViewName("user/login");
 		}
 
@@ -60,22 +62,22 @@ public class AppUserController {
 	@RequestMapping(value = { "/acces_denied" }, method = RequestMethod.GET)
 	public ModelAndView accessDenied() {
 		ModelAndView model = new ModelAndView();
-		model.setViewName("errors/access_denied");
+		model.setViewName("error/access_denied");
 
 		return model;
 	}
 
-	/*
-	 * @RequestMapping(value = { "/home/home" }, method = RequestMethod.GET) public
-	 * ModelAndView home() { ModelAndView model = new ModelAndView(); Authentication
-	 * authentication = SecurityContextHolder.getContext().getAuthentication();
-	 * AppUser appUser = appUserService.findByEmail(authentication.getName());
-	 * 
-	 * model.addObject("userName", appUser.getName());
-	 * model.setViewName("home/home");
-	 * 
-	 * return model;
-	 * 
-	 * }
-	 */
+	@RequestMapping(value = { "/home" }, method = RequestMethod.GET)
+	public ModelAndView home() {
+		ModelAndView model = new ModelAndView();
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		AppUser appUser = appUserService.findByEmail(authentication.getName());
+
+		model.addObject("userName", appUser.getFirstName() + appUser.getLastName());
+		model.setViewName("home/home");
+
+		return model;
+
+	}
+
 }

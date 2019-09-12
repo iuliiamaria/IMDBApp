@@ -88,7 +88,8 @@ span.new {
 			email or password is incorrect!</div>
 		<form th:action="@{/login}" th:object="${appuser}" method="post">
 			<div class="imgcontainer">
-				<img src="../../resources/static/images/logo.jpg" th:src="@{../../images/logo.jpg}" alt="Avatar" class="avatar">
+				<img src="../../resources/static/images/logo.jpg"
+					th:src="@{../../images/logo.jpg}" alt="Avatar" class="avatar">
 			</div>
 
 			<div class="container">
@@ -105,7 +106,7 @@ span.new {
 
 			<div class="container" style="background-color: #f1f1f1">
 				<button type="button" class="cancelbtn">Cancel</button>
-				<span class="new"> <a th:href="@{user/signup}">Create an
+				<span class="new"> <a th:href="@{/signup}">Create an
 						account.</a>
 				</span>
 			</div>
